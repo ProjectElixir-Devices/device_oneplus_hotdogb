@@ -16,6 +16,8 @@ AB_OTA_PARTITIONS += \
     system_ext \
     vbmeta_system
 
+TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
+
 # Display
 TARGET_SCREEN_DENSITY := 420
 
