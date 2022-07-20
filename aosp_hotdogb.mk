@@ -14,6 +14,8 @@ $(call inherit-product, device/oneplus/hotdogb/device.mk)
 # Inherit some common PixelExperience stuff.
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
+$(call inherit-product, vendor/PixelLauncher/PixelLauncher.mk)
+
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := aosp_hotdogb
 PRODUCT_DEVICE := hotdogb
@@ -35,9 +37,17 @@ TARGET_SUPPORTS_NEXT_GEN_ASSISTANT := true
 TARGET_USES_AOSP_RECOVERY := true
 TARGET_SUPPORTS_QUICK_TAP := true
 
+ELIXIR_MAINTAINER := Master
+IS_PHONE := true
+ELIXIR_BUILD_TYPE := OFFICIAL
+TARGET_SUPPORTS_GOOGLE_RECORDER := false
+TARGET_INCLUDE_STOCK_ACORE := false
+TARGET_INCLUDE_LIVE_WALLPAPERS := false
+TARGET_FACE_UNLOCK_SUPPORTED := true
+EXTRA_UDFPS_ANIMATIONS := true
+
 # Build info
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    TARGET_DEVICE=OnePlus7T \
     TARGET_PRODUCT=OnePlus7T 
     
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
